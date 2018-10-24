@@ -4,7 +4,7 @@ echo "Ensure core dumps are restricted"
 	if [ -f /etc/security/limits.d/limit_1835_orig.conf ];then
 		echo "Backup file already exists."
 	else
-		cp /etc/security/limits.d/*proc.conf limit_1835_orig.conf
+		cp /etc/security/limits.d/*proc.conf /etc/security/limits.d/limit_1835_orig.conf
 		echo "Backup file created"
 	fi
 
