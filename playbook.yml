@@ -6,20 +6,13 @@
     - name: 1.7.1.2. Ensure local login warning banner is configured properly
       script: ./units/1-7-1-2.sh
       register: 1-7-1-2_result
-      
-    - debug:
-         var: 1-7-1-2_result.stdout_lines
+
 
     - name: 5.1.2 Ensure permissions on /etc/crontab are configured
       script: ./units/5-1-2.sh
       register: 5-1-2_result
-      
-    - debug:
-         var: 5-1-2_result.stdout_lines
+
         
     - name: 4.2.4 Ensure permissions on all logfiles are configured
       script: ./units/4-2-4.sh
       register: 4-2-4_result
-      
-    - debug:
-         var: 4-2-4_result.stdout_lines
