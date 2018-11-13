@@ -1,0 +1,25 @@
+---
+
+- hosts: all
+  become: yes
+  tasks: 
+    - name: Container Backup
+      script: ./dockerbackup.sh
+      register: dockerbackup_result
+      
+      - debug:
+        var: dockerbackup_result.stdout.lines
+
+    - name: Container Backup
+      script: ./dockerbackup.sh
+      register: dockerbackup_result
+      
+     - debug:
+        var: dockerbackup_result.stdout.lines
+        
+    - name: 4.2.4 Ensure permissions on all logfiles are configured
+      script: ./units/4-2-4.sh
+      register: 4-2-4_result
+      
+     - debug:
+        var: 4-2-4_result.stdout.lines
